@@ -1,0 +1,25 @@
+{
+  "name": "onedrive-excel-readwrite-poc",
+  "version": "1.0.0",
+  "description": "POC: Read/write Excel file on OneDrive via Microsoft Graph access token",
+  "main": "src/poc.js",
+  "scripts": {
+    "start": "node src/poc.js",
+    "test": "node -e \"console.log('No automated tests. Run npm start with GRAPH_ACCESS_TOKEN.')\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pankaj-walke-amla/onedrive-excel-readwrite-poc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pankaj-walke-amla/onedrive-excel-readwrite-poc/issues"
+  },
+  "homepage": "https://github.com/pankaj-walke-amla/onedrive-excel-readwrite-poc#readme",
+  "dependencies": {
+    "axios": "^1.18.1",
+    "exceljs": "^4.4.0"
+  }
+}
