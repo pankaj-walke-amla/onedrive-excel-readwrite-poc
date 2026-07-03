@@ -22,11 +22,21 @@ npm install
 ## Run
 
 ```powershell
-$env:GRAPH_ACCESS_TOKEN="YOUR_TOKEN"
+$env:GRAPH_ACCESS_TOKEN="YOUR_TOKEN"           # or put it in .env
 $env:POC_FILE_NAME="onedrive-excel-poc.xlsx"   # optional
 $env:POC_VALUE="Hello from POC"                # optional
 npm start
 ```
+
+You can also create a `.env` file in the project root:
+
+```dotenv
+GRAPH_ACCESS_TOKEN=YOUR_TOKEN
+POC_FILE_NAME=onedrive-excel-poc.xlsx
+POC_VALUE=Hello from POC
+```
+
+The script now loads `.env` first, and `.env.example` as fallback.
 
 ## Expected successful output
 
@@ -40,3 +50,5 @@ ReadBackValue: ...
 ```
 
 If token/scope/session is invalid, script exits with `POC_FAILED: ...` and the Graph error payload.
+
+If OneDrive returns 423 `resourceLocked` for the target file name, the script retries and then automatically uploads to a timestamped fallback file name.
